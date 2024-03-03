@@ -1,0 +1,128 @@
+1. Constructor Function
+    function BankAccoutn(custName, balance=0){
+        //properties
+        this.name = custName
+        this.balance = balance
+        //methods
+        this.deposit =  (amount) =>{
+            this.balance+=amount
+        }
+    }
+
+2. Prototype => Solves the problem of function defination defined again and again in all the objects
+            => saves memory
+    BankAccount.prototype.deposit = function (amount){
+        //implementation
+    }
+    BankAccount also belongs to Object class
+
+3. ES 6 introduces 'class' keyword
+    class BankAccount{
+        //attributes just like Java and C++
+        customerName;
+        accountNumber;
+        balance=0;
+
+        //constructor(name, accNum)
+        constructor(name, accNum){
+            this.customerName = name
+        }
+
+        //other methods
+        deposit(amount){
+            //implementation
+        }
+
+        withdraw(amount){
+            //implementation
+        }
+    }
+
+IMP: Hoisting doesn't work in classes
+
+4. Inheritance
+    => DRY (Do not repeat yourself) principle
+    
+    class CurrentAccount extends BankAccount{
+        transctionLimit = 1000;
+
+        constructor(name, balance=0){
+            super(customerName, balance)
+        }
+    }
+
+5. Encapsulation
+    => access of the attributes is the problem
+    => Private attributes and amount:
+        class BankAccount{
+            #balance = 0
+
+            
+            //normal syntax for getters and setters
+            setBalance(x){
+                //do validation
+                this.#balance = x
+            }
+            getBalance(){
+                return this.#balance
+            }
+
+            //new syntax for getters and setters
+                -> directly access using '.' operator
+            set balance(amount){
+                //do validation
+                this.#balance = amount
+            }
+
+            get balance(){
+                return this.#balance
+            }
+        }
+        class SavingAccount extends BankAccount{
+            constructor(name, amount=0){
+                super(name, amount)
+            }
+
+            #calculateInterest(x){
+                //some logic
+                -> this needs to be made private
+            }
+            takeLoan(amount){
+                this.#calculateInterest(amount)
+            }
+        }
+        -> Private can not be accessed from the child
+
+
+6. Static Properties and static methods
+    => no relation to class instance (object)
+    => for caching function, configuration or utility function
+
+    class User{
+        static id=1;
+        static cache = {
+            1:'User1}
+        }
+        constructor(name, age){
+            this.name = name;
+            this.age = age;
+            this.id = User.id++;
+        }
+
+        static compareArr(user1, user2){
+            //sort in ascending order
+            return user1.age-user2.age
+        }
+
+        static hasInCache(){
+            <---**** Important ****--->
+            'this' keyword for a static variable can only be used inside a static method
+            console.log(this.cache);
+        }
+    }
+
+    let user1 = new User('Nishit', 324)
+    let user2 = new User('Abhishek', 32)
+
+    let users = [user1, user2]
+    users.sort(User.compareArr)
