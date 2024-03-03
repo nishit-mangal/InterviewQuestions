@@ -1,0 +1,12 @@
+{
+  "name": "interviewquestions",
+  "version": "1.0.0",
+  "description": "Practice",
+  "main": "index.js",
+  "scripts": {
+    "start":"node index.js"
+  },
+  "author": "Nisit Mangal",
+  "license": "ISC",
+  "type":"module"
+}
