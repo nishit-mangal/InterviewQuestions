@@ -1,0 +1,100 @@
+1>
+
+function mystery() {
+  console.log(a);  // Output: ? -> undefined
+  console.log(b);  // Output: ? -> error
+  console.log(c);  // Output: ? -> error
+
+  var a = 1;
+  let b = 2;
+  const c = 3;
+
+  if (true) {
+    var a = 10;   
+    let b = 20;   
+    const c = 30;   
+ }
+
+  console.log(a);  // Output: ?  -> 1
+  console.log(b);  // Output: ?  -> 2
+  console.log(c);  // Output: ?  -> 3
+}
+
+mystery();
+
+output:-
+
+
+
+
+
+
+
+2>
+
+ function inner () {
+	count ++;
+return count;	
+  }  
+
+function createCounter() {
+  let count = 0; 
+   return inner;
+}
+
+const counter = createCounter;
+
+console.log(counter()());    //output?    -> 1
+    
+
+
+3>
+
+var x = 10;
+function outer() {
+  var x = 20;
+  function inner() {
+    console.log(x);
+  }
+  return inner;
+}
+var closureFn = outer();
+closureFn(); 
+Output:-  20
+
+
+
+
+
+
+
+
+4>
+
+console.log('Script start');
+					
+somePromise.then(() => {
+	console.log(“log 1”)
+})
+setTimeout(()=>{
+console.log(“log2”)
+},0)
+console.log('Script end');
+
+
+Output :-
+Script start
+Script end
+//promise takes more than 0 ms
+Log2 
+Log1
+
+
+
+
+
+
+
+
+
+
