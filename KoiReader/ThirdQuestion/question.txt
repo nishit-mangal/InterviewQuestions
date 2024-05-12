@@ -1,0 +1,9 @@
+For Nodejs/backend developers :-
+Make a GET request to https://restcountries.eu/rest/v2/lang/es and store the response in a file.
+Add a retry logic if the request fails for some reason.
+For retrying - Use asyncjs library or implement it yourself.
+For GET request choose any of the following -
+
+i. superagent (https://github.com/visionmedia/superagent)
+ii. request (https://www.npmjs.com/package/request)
+iii. got (https://www.npmjs.com/package/got)
