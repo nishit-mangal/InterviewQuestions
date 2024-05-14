@@ -1,0 +1,24 @@
+User, Rider, Restaurant
+
+Table
+User :{id:number, name:string, pincode: number, phoneNumber:string, email:string, password: string(hashed)}
+Address:{id:number, userId: number, address:string, isActive:boolean}
+Rider:{id:number, name:string, phoneNumber:string, registrationNumber:string, vehicleName:string, vehicleColor:string}
+Restaurant:{id:number, name:restaurant, phoneNumber:string}
+Dish:{id:number, restaurant_id, price:number, quantity:number, name:string}
+Order:{id:number, restaurant_id, user_id, rider_id, order_time:timestamp, pickup_time:timestamp, delivery_time:timestamp, user_address_id:number, restaurant_address_id:number, cancelled:boolean, cancelation_time:timestamp,} 
+OrderDetail:{id:number, order_id, dish_id, quantity_ordered}
+
+Function solve(hour, minute){
+if(hour<0 || hour>12){
+	Throw ‘Invalid input’
+}
+if(minute<0 || minute>60)
+	Throw ‘invalid input’
+
+Let hourDegree = hour * 30 + minute*0.5 //180
+Let minuteDegree = minute*6
+Let largetDegree = Math.abs(hourDegree -minuteDegree )
+Let secondDegree = 360-largetDegree 
+Return Math.min(secondDegree ,largetDegree )
+}
