@@ -1,0 +1,4 @@
+Q1: given a string of integers eg: '69' , '245'. tell if it is the same number in the 180 degree mirror image.
+69 is
+245 is not
+609 is
