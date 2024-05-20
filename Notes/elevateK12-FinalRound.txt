@@ -1,0 +1,155 @@
+Q1. Given a 2D plane - 2xN 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Fill the entire plane using the 2 given Biscuits types. Find out in how many ways you can fill the entire plane. 
+
+ 
+
+Let numOfCol = 9 
+
+Let arr = Array(numOfCol+1) 
+
+Arr[0] = 0, arr[1] = 1, arr[2] = 2 
+
+Solve(3) 
+
+ 
+
+Function baseFunction(numOfColumn){ 
+
+	If(numOfColumn<=2) 
+
+		return arr[numOfColumn] 
+
+	Return Solve(3) 
+
+} 
+
+ 
+
+Function solve(index){ 
+
+	If(index> numOfCol) 
+
+		return arr[numOfCol] 
+
+	Arr[index] =  arr[n-1] + arr[n-2] 
+
+	Return Solve(index+1) 
+
+} 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Match 
+
+MatchId 
+
+Team1 
+
+Team2 
+
+Venue 
+
+Start Date 
+
+TournamentId 
+
+Winner(teamId) 
+
+ 
+
+Team 
+
+Id 
+
+Name 
+
+Country 
+
+ 
+
+Player 
+
+Id 
+
+Name 
+
+ 
+
+Tournament 
+
+Id 
+
+name 
+
+ 
+
+Q1. Given the name of the team, display all upcoming matche details 
+
+A1. Select * from match where team1= (select id from team where name=givenName ) 
+
+or team2 = (select id from team where name=givenName )  
+
+and startDate>today 
+
+Q2. Given the teamId Display the count of matches won by the team 
+
+Count where winner = teamId 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Acceswsing the db: optimizing the query -> indexing to the keys/column of Db 
+
+Complex computation- optimize the computation 
+
+Db qeuries in for loop -> bring all data and then compute 
+
+If non critical task is getting performed -> separtion of critical and non-critical task 
