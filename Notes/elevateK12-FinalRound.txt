@@ -1,42 +1,8 @@
 Q1. Given a 2D plane - 2xN 
 
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
 
 Fill the entire plane using the 2 given Biscuits types. Find out in how many ways you can fill the entire plane. 
 
- 
 
 Let numOfCol = 9 
 
@@ -46,7 +12,6 @@ Arr[0] = 0, arr[1] = 1, arr[2] = 2
 
 Solve(3) 
 
- 
 
 Function baseFunction(numOfColumn){ 
 
@@ -59,7 +24,6 @@ Function baseFunction(numOfColumn){
 } 
 
  
-
 Function solve(index){ 
 
 	If(index> numOfCol) 
@@ -73,13 +37,6 @@ Function solve(index){
 } 
 
  
-
- 
-
- 
-
- 
-
 Match 
 
 MatchId 
@@ -135,14 +92,6 @@ and startDate>today
 Q2. Given the teamId Display the count of matches won by the team 
 
 Count where winner = teamId 
-
- 
-
- 
-
- 
-
- 
 
  
 
