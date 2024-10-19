@@ -101,7 +101,7 @@ IMP: Hoisting doesn't work in classes
     class User{
         static id=1;
         static cache = {
-            1:'User1}
+            1:'User1'
         }
         constructor(name, age){
             this.name = name;
